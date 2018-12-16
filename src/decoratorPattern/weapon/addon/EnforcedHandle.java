@@ -3,25 +3,18 @@ package decoratorPattern.weapon.addon;
 import decoratorPattern.weapon.Weapon;
 
 public class EnforcedHandle extends WeaponAddOnDecorator {
-    Weapon weapon;
 
     public EnforcedHandle(Weapon weapon) {
-        this.weapon = weapon;
+        super(weapon);
     }
-
 
     @Override
     public int damage() {
-        return weapon.damage() + 2;
+        return getWeapon().damage() + 2;
     }
 
     @Override
-    public double weight() {
-        return weapon.damage() + 1.5;
-    }
-
-    @Override
-    public String getDescription() {
-        return formatDescription("\t\tenforced handle\n", weapon);
+    public String attack() {
+        return "attack with " + damage() + " damage";
     }
 }

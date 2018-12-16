@@ -1,18 +1,13 @@
 package decoratorPattern.weapon;
 
-public class Gun extends Weapon {
+public class Gun implements Weapon {
 
-    public Gun() {
-        this.type = "Gun";
-    }
-
-    @Override
     public int damage() {
         return 25;
     }
 
     @Override
-    public double weight() {
-        return 3.0;
+    public String attack() {
+        return "attack with " + damage() + " damage";
     }
 }
